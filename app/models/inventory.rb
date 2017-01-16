@@ -30,7 +30,7 @@ class Inventory < ApplicationRecord
       inventories_hash.merge!(extract_date: date)
       inventories << Inventory.new(inventories_hash)
     end
-    inventories_imports = Inventory.import inventories, validate: true, on_duplicate_key_update: {conflict_target: [:item_number, :org_number, :lot], index_name: :index_inventories_on_item_number_and_org_number_and_lot, columns: [:quantity,:status, :last_ship_date, :extract_date]}
+    inventories_imports = Inventory.import inventories, validate: true, on_duplicate_key_update: {conflict_target: [:item_number, :org_number, :lot], index_name: :index_inventories_on_item_number_and_org_number_and_lot, columns: [:quantity, :status, :last_ship_date, :extract_date]}
     return inventories_imports
   end
 
@@ -44,7 +44,7 @@ class Inventory < ApplicationRecord
       inventories_hash.merge!(extract_date: date)
       inventories << Inventory.new(inventories_hash)
     end
-    inventories_imports = Inventory.import inventories, validate: true, on_duplicate_key_update: {conflict_target: [:item_number, :org_number], index_name: :index_inventories_on_item_number_and_org_number_and_lot, columns: [:quantity,:status, :due_date, :extract_date]}
+    inventories_imports = Inventory.import inventories, validate: true, on_duplicate_key_update: {conflict_target: [:item_number, :org_number], index_name: :index_inventories_on_item_number_and_org_number, columns: [:quantity,:status, :due_date, :extract_date]}
     return inventories_imports
   end
 end

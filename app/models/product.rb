@@ -3,11 +3,11 @@
 # Table name: products
 #
 #  id            :integer          not null, primary key
-#  item_number         :string(255)
-#  status         :decimal(12, 4)   default(0.0)
-#  sales_type :boolean          default(FALSE)
-#  cateogory    :datetime         not null
-#  description    :datetime         not null
+#  item_number  :integer
+#  status       :string
+#  sales_type :string
+#  cateogory    :string
+#  description    :string
 #
 
 class Product < ApplicationRecord

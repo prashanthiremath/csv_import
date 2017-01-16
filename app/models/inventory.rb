@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: Inventories
+#
+#  id            :integer          not null, primary key
+#  item_number  :integer
+#  status       :string
+#  lot          :integer
+#  org_number :integer
+#  due_date    :date
+#  extract_date :date
+#  quantity     :integer
+#  last_ship_date :date
+#
+
 class Inventory < ApplicationRecord
   attr_accessor :check_lot_exist
   validates :item_number, :org_number, :presence => true

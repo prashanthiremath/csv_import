@@ -1,0 +1,2 @@
+$("#errors").html("<%= escape_javascript (render :partial => 'inventories/errors', :locals => {:error_messages => @error_messages}) %>");
+$("#inventory_in_transit_list").html("<%= escape_javascript (render :partial => 'inventories/in_transit_listing', :locals => {:product_listing => @product_listing}) %>")

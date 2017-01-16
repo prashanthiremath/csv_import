@@ -1,0 +1,32 @@
+<% if  @inventories_listing %>
+<table  border="3" layout= "fixed" width=" 100%"  >
+  <colgroup>
+    <col style="width: 23%" />
+    <col style="width: 23%" />
+    <col style="width: 23%" />
+
+    <tr>
+      <th>Item Number</th>
+      <th>Org Number</th>
+      <th>Quantity</th>
+      <th>Status</th>
+      <th>Lot</th>
+      <th>Last ship date</th>
+      <th>Extract date</th>
+    </tr>
+
+    <% @inventories_listing.each do |inventory| %>
+        <tr >
+          <td><%= inventory.item_number%></td>
+          <td><%= inventory.org_number %></td>
+          <td><%= inventory.quantity %></td>
+          <td><%= inventory.status %></td>
+          <td><%= inventory.lot  %></td>
+          <td><%= inventory.last_ship_date.strftime('%m-%d-%Y')  %></td>
+          <td><%= inventory.extract_date.strftime('%m-%d-%Y')  %></td>
+        </tr>
+    <% end %>
+  </colgroup>
+</table>
+
+<% end %>

@@ -1,0 +1,8 @@
+<div style="background: red">
+  <%= @message %>
+  <%if @error_messages %>
+      <% @error_messages.each do |error| %>
+          <span> <%= error %> </span>
+      <% end %>
+  <% end %>
+</div>

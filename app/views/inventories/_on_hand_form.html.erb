@@ -1,0 +1,7 @@
+
+<%= form_tag import_on_hand_inventories_path, multipart: true, :remote => true do %>
+    <p> Extract Date:  <input type="text" id="datepicker" name="extract_date"></p>
+    <%= file_field_tag :file %>
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <%= submit_tag "Import CSV" %>
+<% end %>

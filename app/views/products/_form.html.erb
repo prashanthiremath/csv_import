@@ -1,0 +1,7 @@
+<h1> Product Data Import</h1>
+<br>
+<%= form_tag import_products_path, multipart: true, :remote => true do %>
+    <%= file_field_tag :file %>
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <%= submit_tag "Import CSV" %>
+<% end %>

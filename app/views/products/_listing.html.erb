@@ -1,0 +1,25 @@
+<table  border="3" layout= "fixed" width=" 100%"  >
+  <colgroup>
+    <col style="width: 23%" />
+    <col style="width: 23%" />
+    <col style="width: 23%" />
+
+    <tr>
+      <th>Item Number</th>
+      <th>Item Description</th>
+      <th>Status</th>
+      <th>Cateogry</th>
+      <th>Sales Type</th>
+    </tr>
+
+    <% @product_listing.each do |product| %>
+        <tr >
+          <td><%= product.item_number%></td>
+          <td><%= product.description %></td>
+          <td><%= product.status %></td>
+          <td><%= product.category %></td>
+          <td><%= product.sales_type %></td>
+        </tr>
+    <% end %>
+  </colgroup>
+</table>
